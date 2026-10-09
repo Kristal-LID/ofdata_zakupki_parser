@@ -155,7 +155,7 @@ def interactive_menu():
                   default="-date")
 
     api_params = {
-        "key":  "API_key",   # можно вынести самостоятельно и не вводить каждый раз
+        "key":  API_key,   # можно вынести самостоятельно и не вводить каждый раз
         "ogrn": ogrn,
         "inn":  inn,
         "kpp":  kpp,
@@ -213,7 +213,7 @@ if __name__ == "__main__":
         api_params = interactive_menu()
 
     if api_params:
-        print(f"\n🚀 Запуск... ИНН={api_params.get('inn') or '—'}, ОГРН={api_params.get('ogrn') or '—'}")
+        print(f"\n🚀 Запуск... ИНН={api_params.get('inn') or '—'}, ОГРН={api_params.get('ogrn') or '—'}, КПП={api_params.get('kpp') or '—'}, ФЗ={api_params.get('law') or '—'}, РОЛЬ={api_params.get('role') or '—'}")
         data = get_data(api_params)
         if data and data.get('meta', {}).get('status') == 'ok':
             save_to_excel(data)
