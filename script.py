@@ -181,7 +181,7 @@ def interactive_menu():
 # ---------- Запуск из .ini (как было) ----------
 def load_from_ini():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    ini_path = os.path.join(base_dir, 'настройки.ini')
+    ini_path = os.path.join(base_dir, 'settings.ini')
     if not os.path.exists(ini_path):
         print(f"❌ Файл {ini_path} не найден!")
         return None
